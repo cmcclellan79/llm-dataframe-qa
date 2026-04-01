@@ -1,0 +1,27 @@
+[
+  {
+    "question": "what is terrence ross' nationality?",
+    "expected_answer": "united states",
+    "ground_truth_query": "result = df.loc[df['player'] == 'terrence ross', 'nationality'].values[0]"
+  },
+  {
+    "question": "how many players are from the united states?",
+    "expected_answer": 6,
+    "ground_truth_query": "result = df[df['nationality'] == 'united states'].shape[0]"
+  },
+  {
+    "question": "which player went to michigan?",
+    "expected_answer": "jalen rose",
+    "ground_truth_query": "result = df.loc[df['school_club_team'] == 'michigan', 'player'].values[0]"
+  },
+  {
+    "question": "what position does aleksandar radojević play?",
+    "expected_answer": "center",
+    "ground_truth_query": "result = df.loc[df['player'] == 'aleksandar radojević', 'position'].values[0]"
+  },
+  {
+    "question": "how many unique nationalities are there?",
+    "expected_answer": 2,
+    "ground_truth_query": "result = df['nationality'].nunique()"
+  }
+]
