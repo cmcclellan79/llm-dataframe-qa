@@ -28,9 +28,9 @@ import math
 from anthropic import Anthropic
 
 
-# ============================================================================
+
 # STEP 1: Initialize the client
-# ============================================================================
+
 
 client = Anthropic()  # reads ANTHROPIC_API_KEY from environment
 
@@ -38,9 +38,9 @@ MODEL = "claude-sonnet-4-20250514"  # cost-effective choice
 # MODEL = "claude-opus-4-6"         # highest accuracy (uncomment to use)
 
 
-# ============================================================================
+
 # STEP 2: Build the prompt (metadata only — no data leaves your machine)
-# ============================================================================
+
 
 SYSTEM_PROMPT = """You are a professional Python programming assistant. \
 Write Pandas code to get the answer to the user's question.
@@ -76,9 +76,9 @@ def build_user_prompt(columns, dtypes, question, column_descriptions=None):
     return prompt
 
 
-# ============================================================================
+
 # STEP 3: Call the Claude API
-# ============================================================================
+
 
 def generate_pandas_query(columns, dtypes, question, column_descriptions=None):
     """
@@ -111,9 +111,9 @@ def generate_pandas_query(columns, dtypes, question, column_descriptions=None):
     return raw.strip()
 
 
-# ============================================================================
+
 # STEP 4: Execute in a sandbox (restricted environment)
-# ============================================================================
+
 
 def execute_query(code, df):
     """
@@ -141,9 +141,9 @@ def execute_query(code, df):
         return {"success": False, "result": None, "error": f"{type(e).__name__}: {e}"}
 
 
-# ============================================================================
+
 # STEP 5: Evaluate results (pass@1)
-# ============================================================================
+
 
 def compare_results(predicted, expected):
     """
@@ -186,9 +186,8 @@ def compare_results(predicted, expected):
         return str(predicted) == str(expected)
 
 
-# ============================================================================
+
 # STEP 6: Full evaluation loop
-# ============================================================================
 
 def run_evaluation(df, qa_pairs):
     """
@@ -295,9 +294,8 @@ def run_evaluation(df, qa_pairs):
     return pass_at_1
 
 
-# ============================================================================
+
 # MAIN — Run the demo
-# ============================================================================
 
 if __name__ == "__main__":
     # Load sample data

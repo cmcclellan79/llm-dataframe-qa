@@ -98,9 +98,9 @@ def compare_results(predicted, expected):
         return str(predicted) == str(expected)
 
 
-# ============================================================================
+
 # Approach 1: DataFrame QA (metadata only)
-# ============================================================================
+
 
 def run_metadata_only(df, question):
     """Paper's approach: send only column names and dtypes."""
@@ -167,9 +167,9 @@ Here is the full table data in CSV format:
     }
 
 
-# ============================================================================
+
 # Run comparison
-# ============================================================================
+
 
 def run_comparison(df, qa_pairs):
     # Lowercase strings
@@ -280,9 +280,8 @@ def run_comparison(df, qa_pairs):
     return results
 
 
-# ============================================================================
-# MAIN
-# ============================================================================
+#main 
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Compare token usage: metadata-only vs full-table")
